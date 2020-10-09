@@ -47,7 +47,7 @@ function get_average_sum(arr) {
         sum: sum
     }
 
-    returnobj;   
+    return obj;   
 }
 
 get_average_sum(arr)
