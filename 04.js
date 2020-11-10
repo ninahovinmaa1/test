@@ -26,28 +26,29 @@ Exempel på värden och deras svar:
 
 */
 
-sum = 0;
-average = 0;
-
-function get_average_sum(arr) {
-    for (let element of arr) {
-       
-        sum += element;
+function get_average_sum(array) {
+    if (array.length < 2 || array.length > 10) {
+        return false;
     }
+    else {
+        //räkna ut genomsnittet och summan av värdena i arrayen
+        let object = {
+            sum: 0,
+            average: 0,
+        }
 
-    const reducer = (accumulator, item) => {
-        return accumulator + item;
-        };
+        object.sum = array.reduce((accumulator, item) => {
+            return accumulator + item;
+            }, 0); 
 
-    let reducedArr = arr.reduce(reducer, 0);
-    average = reducedArr/arr.length;
+        object.average = object.sum / array.length;
 
-    let obj = {
-        average: average,
-        sum: sum
+        return object;
     }
-
-    return obj;   
 }
 
-get_average_sum(arr)
+let array = [-1, 2,18]
+
+let averageAndSum = get_average_sum(array);
+
+
